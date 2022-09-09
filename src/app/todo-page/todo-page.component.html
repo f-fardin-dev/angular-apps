@@ -1,1 +1,11 @@
-<div class="container mx-auto px-4"></div>
+<div class="container mx-auto px-4 min-h-screen">
+  <h1 class="text-4xl text-center py-6 text-blue-900">Todo Page</h1>
+  <div class="flex flex-row gap-4 p-2 mb-6 w-100">
+    <input class="border-2 p-4 text-lg" placeholder="todo title ..." />
+    <input class="border-2 p-4 text-lg" placeholder="description ..." />
+    <button class="bg-green-200 py-4 px-8 ml-auto rounded-md font-bold text-lg">
+      Add Todo
+    </button>
+  </div>
+  <app-todo-list [todos]="todos"></app-todo-list>
+</div>
