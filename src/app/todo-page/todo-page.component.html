@@ -18,5 +18,8 @@
       Add Todo
     </button>
   </div>
-  <app-todo-list [todos]="todos"></app-todo-list>
+  <app-todo-list
+    [todos]="todos"
+    (deleteAction)="deleteTodo($event)"
+  ></app-todo-list>
 </div>

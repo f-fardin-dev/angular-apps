@@ -3,7 +3,10 @@
     <p class="text-lg font-bold">{{ todo.title }}</p>
     <span>{{ todo.description }}</span>
   </div>
-  <div class="ml-auto">
+  <div
+    class="ml-auto cursor-pointer hover:text-red-700"
+    (click)="deleteTodo(todo.id)"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="icon icon-tabler icon-tabler-trash"

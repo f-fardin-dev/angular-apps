@@ -1,5 +1,9 @@
 <div class="flex flex-col gap-3">
-  <app-todo-items *ngFor="let todo of todos" [todo]="todo"></app-todo-items>
+  <app-todo-items
+    *ngFor="let todo of todos"
+    [todo]="todo"
+    (deleteAction)="deleteTodo($event)"
+  ></app-todo-items>
   <div
     *ngIf="todos.length <= 0"
     class="text-center h-40 grid place-content-center text-lg"

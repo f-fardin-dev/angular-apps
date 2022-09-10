@@ -33,4 +33,7 @@ export class TodoPageComponent implements OnInit {
     this.title = '';
     this.description = '';
   }
+  deleteTodo(id: string): void {
+    this.todos = this.todos.filter((todo) => todo.id !== id);
+  }
 }
