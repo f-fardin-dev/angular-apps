@@ -3,15 +3,21 @@
     <p class="text-lg font-bold">{{ todo.title }}</p>
     <span>{{ todo.description }}</span>
   </div>
+  <input
+    class="ml-auto mr-4 h-6 w-6 cursor-pointer"
+    title="Toggle status"
+    type="checkbox"
+  />
   <div
-    class="ml-auto cursor-pointer hover:text-red-700"
+    class="cursor-pointer hover:text-red-700"
+    title="Delete Todo"
     (click)="deleteTodo(todo.id)"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="icon icon-tabler icon-tabler-trash"
-      width="24"
-      height="24"
+      width="30"
+      height="30"
       viewBox="0 0 24 24"
       stroke-width="2"
       stroke="currentColor"
