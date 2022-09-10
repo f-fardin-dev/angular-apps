@@ -3,6 +3,7 @@
     *ngFor="let todo of todos"
     [todo]="todo"
     (deleteAction)="deleteTodo($event)"
+    (toggleAction)="toggleTodo($event)"
   ></app-todo-items>
   <div
     *ngIf="todos.length <= 0"

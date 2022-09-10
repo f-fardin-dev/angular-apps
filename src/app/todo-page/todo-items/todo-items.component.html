@@ -1,12 +1,19 @@
 <div class="bg-blue-200 rounded p-5 flex flex-row items-center">
   <div class="flex flex-col cursor-pointer w-1/2">
-    <p class="text-lg font-bold">{{ todo.title }}</p>
+    <p
+      class="text-lg font-bold"
+      [ngClass]="{ 'line-through': todo.status === 'done' }"
+    >
+      {{ todo.title }}
+    </p>
     <span>{{ todo.description }}</span>
   </div>
   <input
     class="ml-auto mr-4 h-6 w-6 cursor-pointer"
     title="Toggle status"
     type="checkbox"
+    [checked]="todo.status === 'done'"
+    (click)="toggleTodo()"
   />
   <div
     class="cursor-pointer hover:text-red-700"

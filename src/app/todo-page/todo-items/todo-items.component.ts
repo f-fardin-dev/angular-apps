@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { TODO } from '../models/todos';
+import { TODO, TODO_STATUS } from '../models/todos';
 
 @Component({
   selector: 'app-todo-items',
@@ -11,9 +11,11 @@ export class TodoItemsComponent implements OnInit {
     id: '',
     title: '',
     description: '',
+    status: TODO_STATUS.IN_PROGRESS,
   };
 
   @Output() deleteAction = new EventEmitter<string>();
+  @Output() toggleAction = new EventEmitter<string>();
 
   constructor() {}
 
@@ -21,5 +23,9 @@ export class TodoItemsComponent implements OnInit {
 
   deleteTodo(id: string): void {
     this.deleteAction.emit(id);
+  }
+
+  toggleTodo(): void {
+    this.toggleAction.emit(this.todo.id);
   }
 }
