@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { localStorageHelper } from 'src/utils/localStorageHelper';
 import { TODO } from './models/todos';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-todo-page',
@@ -23,7 +24,11 @@ export class TodoPageComponent implements OnInit {
   }
 
   addNewTodo(): void {
-    this.todos.push({ title: this.title, description: this.description });
+    this.todos.push({
+      id: uuidv4(),
+      title: this.title,
+      description: this.description,
+    });
     localStorageHelper.storeItem('ngTodos', this.todos);
     this.title = '';
     this.description = '';
