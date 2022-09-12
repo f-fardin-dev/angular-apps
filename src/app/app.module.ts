@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { CoursePageComponent } from './course-page/course-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TodoListComponent,
     CoursePageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatIconModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

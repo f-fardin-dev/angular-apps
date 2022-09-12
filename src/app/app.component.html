@@ -1,1 +1,26 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #start (click)="start.close()" class="w-64">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/todo-page">
+        <mat-icon class="mr-2">checklist</mat-icon>
+        <span>Todo page</span>
+      </a>
+
+      <a mat-list-item routerLink="/course-page">
+        <mat-icon class="'mr-2">library_books</mat-icon>
+        <span>Courses Page</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <div class="flex w-full">
+      <button mat-icon-button (click)="start.open('mouse')">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div class="flex-auto w-full"></div>
+    </div>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
