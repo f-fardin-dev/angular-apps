@@ -16,6 +16,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import { LoadingComponent } from './loading/loading.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     TodoListComponent,
     CoursePageComponent,
     CourseCardListComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatListModule,
     MatIconModule,
     MatTabsModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
