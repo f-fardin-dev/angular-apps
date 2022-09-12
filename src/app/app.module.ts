@@ -7,6 +7,7 @@ import { TodoPageComponent } from './todo-page/todo-page.component';
 import { TodoItemsComponent } from './todo-page/todo-items/todo-items.component';
 import { TodoListComponent } from './todo-page/todo-list/todo-list.component';
 import { FormsModule } from '@angular/forms';
+import { CoursePageComponent } from './course-page/course-page.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     TodoPageComponent,
     TodoItemsComponent,
     TodoListComponent,
+    CoursePageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
