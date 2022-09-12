@@ -8,6 +8,7 @@ import { TodoItemsComponent } from './todo-page/todo-items/todo-items.component'
 import { TodoListComponent } from './todo-page/todo-list/todo-list.component';
 import { FormsModule } from '@angular/forms';
 import { CoursePageComponent } from './course-page/course-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { CoursePageComponent } from './course-page/course-page.component';
     TodoListComponent,
     CoursePageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
