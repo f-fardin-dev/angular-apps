@@ -25,6 +25,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatButtonModule } from '@angular/material/button';
     CourseCardListComponent,
     LoadingComponent,
     MessagesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
