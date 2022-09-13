@@ -12,6 +12,8 @@ import { TodoListComponent } from './todo-page/todo-list/todo-list.component';
 import { CoursePageComponent } from './course-page/course-page.component';
 import { CourseCardListComponent } from './course-page/course-card-list/course-card-list.component';
 import { MessagesComponent } from './messages/messages.component';
+import { HomeComponent } from './home/home.component';
+import { CourseDetailComponent } from './course-page/course-detail/course-detail.component';
 
 import { LoadingService } from './loading/loading.service';
 import { MessagesService } from './messages/messages.service';
@@ -25,7 +27,6 @@ import { LoadingComponent } from './loading/loading.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HomeComponent } from './home/home.component';
     LoadingComponent,
     MessagesComponent,
     HomeComponent,
+    CourseDetailComponent,
   ],
   imports: [
     BrowserModule,

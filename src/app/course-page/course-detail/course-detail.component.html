@@ -1,0 +1,42 @@
+<ng-container *ngIf="data$ | async as data">
+  <div class="text-center max-w-md my-0 mx-auto">
+    <div class="relative">
+      <div class="absolute left-0">
+        <button
+          mat-icon-button
+          color="primary"
+          aria-label="back button"
+          [routerLink]="'/course-page'"
+        >
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+      </div>
+      <div class="max-w-sm mx-auto">
+        <h2>{{ data.course.description }}</h2>
+      </div>
+    </div>
+
+    <img
+      class="block w-36 mt-5 mb-0 mx-auto"
+      [src]="data.course.iconUrl"
+      *ngIf="data.course"
+    />
+
+    <table
+      class="min-h-[360px] mt-2 mx-auto mat-elevation-z7"
+      *ngIf="data.lessons.length"
+    >
+      <thead>
+        <th>#</th>
+        <th>Description</th>
+        <th>Duration</th>
+      </thead>
+
+      <tr *ngFor="let lesson of data.lessons">
+        <td class="p-2">{{ lesson.seqNo }}</td>
+        <td class="text-left p-2 mx-auto">{{ lesson.description }}</td>
+        <td class="text-center p-2">{{ lesson.duration }}</td>
+      </tr>
+    </table>
+  </div>
+</ng-container>
