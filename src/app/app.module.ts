@@ -10,6 +10,10 @@ import { TodoItemsComponent } from './todo-page/todo-items/todo-items.component'
 import { TodoListComponent } from './todo-page/todo-list/todo-list.component';
 import { CoursePageComponent } from './course-page/course-page.component';
 import { CourseCardListComponent } from './course-page/course-card-list/course-card-list.component';
+import { MessagesComponent } from './messages/messages.component';
+
+import { LoadingService } from './loading/loading.service';
+import { MessagesService } from './messages/messages.service';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -28,6 +32,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     CoursePageComponent,
     CourseCardListComponent,
     LoadingComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatTabsModule,
     MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [LoadingService, MessagesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
