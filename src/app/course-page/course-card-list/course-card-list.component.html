@@ -1,1 +1,23 @@
-<p>course-card-list works!</p>
+<mat-card *ngFor="let course of courses" class="my-5 mx-2 mat-elevation-z10">
+  <mat-card-header>
+    <mat-card-title>{{ course.description }}</mat-card-title>
+  </mat-card-header>
+
+  <img class="m-0 mb-3" [src]="course.iconUrl" />
+
+  <mat-card-content>
+    <p>{{ course.longDescription }}</p>
+  </mat-card-content>
+
+  <mat-card-actions class="text-center">
+    <button
+      mat-button
+      class="mat-raised-button mat-primary"
+      [routerLink]="['/courses', course.id]"
+    >
+      VIEW COURSE
+    </button>
+
+    <button mat-button class="mat-raised-button mat-accent">EDIT</button>
+  </mat-card-actions>
+</mat-card>

@@ -6,7 +6,7 @@ import { TodoPageComponent } from './todo-page/todo-page.component';
 const routes: Routes = [
   { path: 'todo-page', component: TodoPageComponent },
   { path: 'course-page', component: CoursePageComponent },
-  { path: '', redirectTo: 'todo-page', pathMatch: 'full' },
+  { path: '', redirectTo: 'course-page', pathMatch: 'full' },
 ];
 
 @NgModule({
