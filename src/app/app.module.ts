@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +14,7 @@ import { CourseCardListComponent } from './course-page/course-card-list/course-c
 import { MessagesComponent } from './messages/messages.component';
 import { HomeComponent } from './home/home.component';
 import { CourseDetailComponent } from './course-page/course-detail/course-detail.component';
+import { CourseDialogComponent } from './course-page/course-dialog/course-dialog.component';
 
 import { LoadingService } from './loading/loading.service';
 import { MessagesService } from './messages/messages.service';
@@ -27,6 +28,8 @@ import { LoadingComponent } from './loading/loading.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [
@@ -40,12 +43,14 @@ import { MatButtonModule } from '@angular/material/button';
     MessagesComponent,
     HomeComponent,
     CourseDetailComponent,
+    CourseDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
@@ -55,6 +60,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatProgressSpinnerModule,
     MatCardModule,
     MatButtonModule,
+    MatDialogModule,
+    MatMomentDateModule,
   ],
   providers: [LoadingService, MessagesService],
   bootstrap: [AppComponent],
