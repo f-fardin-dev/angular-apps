@@ -30,6 +30,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,9 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatButtonModule,
     MatDialogModule,
     MatMomentDateModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [LoadingService, MessagesService],
   bootstrap: [AppComponent],
