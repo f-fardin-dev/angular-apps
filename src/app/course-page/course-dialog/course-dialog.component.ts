@@ -21,7 +21,8 @@ export class CourseDialogComponent implements OnInit {
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<CourseDialogComponent>,
     @Inject(MAT_DIALOG_DATA) course: Course,
-    private coursesStore: CoursesStore
+    private coursesStore: CoursesStore,
+    private loadingService: LoadingService
   ) {
     this.course = course;
     this.form = fb.group({
@@ -36,8 +37,12 @@ export class CourseDialogComponent implements OnInit {
 
   save() {
     const changes = this.form.value;
-    this.coursesStore.saveCourse(this.course.id, changes).subscribe();
-    this.dialogRef.close(changes);
+    const saveCourse$ = this.coursesStore.saveCourse(this.course.id, changes);
+    this.loadingService
+      .showLoaderUntilCompleted(saveCourse$)
+      .subscribe((val) => {
+        this.dialogRef.close(val);
+      });
   }
 
   close() {
