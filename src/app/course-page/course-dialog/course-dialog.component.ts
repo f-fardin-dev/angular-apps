@@ -2,8 +2,6 @@ import * as moment from 'moment';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { LoadingService } from 'src/app/loading/loading.service';
-import { MessagesService } from 'src/app/messages/messages.service';
 import { Course } from 'src/app/models/course';
 import { CoursesStore } from 'src/app/services/course.store';
 
@@ -11,7 +9,6 @@ import { CoursesStore } from 'src/app/services/course.store';
   selector: 'app-course-dialog',
   templateUrl: './course-dialog.component.html',
   styleUrls: ['./course-dialog.component.css'],
-  providers: [LoadingService, MessagesService],
 })
 export class CourseDialogComponent implements OnInit {
   form: FormGroup;
@@ -21,8 +18,7 @@ export class CourseDialogComponent implements OnInit {
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<CourseDialogComponent>,
     @Inject(MAT_DIALOG_DATA) course: Course,
-    private coursesStore: CoursesStore,
-    private loadingService: LoadingService
+    private coursesStore: CoursesStore
   ) {
     this.course = course;
     this.form = fb.group({
@@ -37,12 +33,8 @@ export class CourseDialogComponent implements OnInit {
 
   save() {
     const changes = this.form.value;
-    const saveCourse$ = this.coursesStore.saveCourse(this.course.id, changes);
-    this.loadingService
-      .showLoaderUntilCompleted(saveCourse$)
-      .subscribe((val) => {
-        this.dialogRef.close(val);
-      });
+    this.coursesStore.saveCourse(this.course.id, changes).subscribe();
+    this.dialogRef.close(changes);
   }
 
   close() {
