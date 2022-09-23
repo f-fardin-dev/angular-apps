@@ -31,7 +31,7 @@ export class CoursesStore {
           const message = 'Could not load courses';
           this.messages.showErrors(message);
           console.info(message, err);
-          return throwError(err);
+          return throwError(() => err);
         }),
         tap((courses) => this.subject.next(courses))
       );
@@ -40,18 +40,14 @@ export class CoursesStore {
   }
 
   saveCourse(courseId: string, changes: Partial<Course>): Observable<any> {
-    const courses = this.subject.getValue();
+    const currentCourses = this.subject.getValue();
 
-    const index = courses.findIndex((course) => course.id == courseId);
-
-    const newCourse: Course = {
-      ...courses[index],
-      ...changes,
-    };
-
-    const newCourses: Course[] = courses.slice(0);
-
-    newCourses[index] = newCourse;
+    const newCourses = currentCourses.map((course) => {
+      if (course.id === courseId) {
+        return { ...course, ...changes };
+      }
+      return course;
+    });
 
     this.subject.next(newCourses);
 
