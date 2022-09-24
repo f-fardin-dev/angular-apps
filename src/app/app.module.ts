@@ -33,6 +33,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MatSelectModule } from '@angular/material/select';
     HomeComponent,
     CourseDetailComponent,
     CourseDialogComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
