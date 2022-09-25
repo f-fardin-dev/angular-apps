@@ -15,6 +15,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { HomeComponent } from './home/home.component';
 import { CourseDetailComponent } from './course-page/course-detail/course-detail.component';
 import { CourseDialogComponent } from './course-page/course-dialog/course-dialog.component';
+import { LoginComponent } from './login/login.component';
+import { SearchLessonsComponent } from './course-page/search-lessons/search-lessons.component';
+import { LessonComponent } from './course-page/lesson/lesson.component';
 
 import { LoadingService } from './loading/loading.service';
 import { MessagesService } from './messages/messages.service';
@@ -50,6 +53,8 @@ import { SafeUrlPipe } from './common/safe-url.pipe';
     CourseDetailComponent,
     CourseDialogComponent,
     LoginComponent,
+    SearchLessonsComponent,
+    LessonComponent,
   ],
   imports: [
     BrowserModule,
