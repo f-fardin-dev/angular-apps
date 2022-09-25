@@ -1,0 +1,60 @@
+<div class="text-center max-w-sm my-0 mx-auto">
+  <h2>Search All Lessons</h2>
+
+  <mat-form-field class="mt-5 mr-3">
+    <input
+      matInput
+      #searchInput
+      autocomplete="off"
+      placeholder="Type your search"
+    />
+  </mat-form-field>
+
+  <button
+    class="ml-3"
+    mat-raised-button
+    color="primary"
+    (click)="onSearch(searchInput.value)"
+  >
+    <mat-icon>search</mat-icon>
+    Search
+  </button>
+
+  <ng-container *ngIf="!activeLesson; else detail">
+    <ng-container *ngIf="searchResults$ | async as lessons">
+      <table class="min-h-[360px] mt-2 mat-elevation-z7">
+        <thead>
+          <th class="p-5 text-black/50">#</th>
+          <th class="p-5 text-black/50">Description</th>
+          <th class="p-5 text-black/50">Duration</th>
+        </thead>
+
+        <tr
+          class="h-14 cursor-pointer hover:bg-blue-300"
+          *ngFor="let lesson of lessons"
+          (click)="openLesson(lesson)"
+        >
+          <td class="p-2 border-solid border-t-2 border-black/20">
+            {{ lesson.seqNo }}
+          </td>
+          <td
+            class="p-2 border-solid border-t-2 border-black/20 text-left my-2 mx-auto"
+          >
+            {{ lesson.description }}
+          </td>
+          <td class="p-2 border-solid border-t-2 border-black/20 text-center">
+            {{ lesson.duration }}
+          </td>
+        </tr>
+      </table>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #detail>
+    <button mat-raised-button class="mt-10" (click)="onBackToSearch()">
+      <mat-icon>arrow_back_ios</mat-icon>
+      Back to Search
+    </button>
+    <app-lesson [lesson]="activeLesson"></app-lesson>
+  </ng-template>
+</div>
