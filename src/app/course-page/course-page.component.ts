@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from '../models/course';
 import { CoursesStore } from '../services/course.store';
@@ -7,6 +7,7 @@ import { CoursesStore } from '../services/course.store';
   selector: 'app-course-page',
   templateUrl: './course-page.component.html',
   styleUrls: ['./course-page.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoursePageComponent implements OnInit {
   beginnerCourses$: Observable<Course[]> = new Observable<Course[]>();

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Lesson } from 'src/app/models/lesson';
 import { CoursesService } from 'src/app/services/courses.service';
@@ -7,6 +7,7 @@ import { CoursesService } from 'src/app/services/courses.service';
   selector: 'app-search-lessons',
   templateUrl: './search-lessons.component.html',
   styleUrls: ['./search-lessons.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchLessonsComponent implements OnInit {
   searchResults$?: Observable<Lesson[]>;

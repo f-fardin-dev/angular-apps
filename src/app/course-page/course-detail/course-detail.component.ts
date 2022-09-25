@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CoursesService } from 'src/app/services/courses.service';
 import { startWith, tap, map } from 'rxjs/operators';
@@ -15,6 +15,7 @@ interface CourseData {
   selector: 'app-course-detail',
   templateUrl: './course-detail.component.html',
   styleUrls: ['./course-detail.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseDetailComponent implements OnInit {
   data$: Observable<CourseData> | undefined;
