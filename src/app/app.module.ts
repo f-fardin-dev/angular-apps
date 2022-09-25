@@ -33,11 +33,12 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { LoginComponent } from './login/login.component';
+import { SafeUrlPipe } from './common/safe-url.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SafeUrlPipe,
     TodoPageComponent,
     TodoItemsComponent,
     TodoListComponent,
